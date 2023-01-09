@@ -1,4 +1,4 @@
-# React zustand with json-server
+#  zustand with json-server
 
 ```
 npm i
