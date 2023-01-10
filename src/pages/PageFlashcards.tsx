@@ -10,7 +10,7 @@ export const PageFlashcards = () => {
       </p>
 
       <div className="flashcards">
-        {store.flashcards.map((flashcard: any) => {
+        {store.flashcards.map((flashcard) => {
           return (
             <div className="flashcard" key={flashcard.id}>
               <div

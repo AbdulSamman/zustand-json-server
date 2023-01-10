@@ -5,14 +5,14 @@ export interface IBook {
   description: string;
   language: string;
 }
-export interface IFlashcard {
+export interface IRawFlashcard {
   id: number;
   category: string;
   front: string;
   back: string;
 }
 
-export interface IRawFlashcard {
+export interface IFlashcard {
   id: number;
   category: string;
   front: string;

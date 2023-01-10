@@ -1,7 +1,7 @@
 import create from "zustand";
 import { useEffect } from "react";
 import axios from "axios";
-import { IBook, IFlashcard } from "./interfaces";
+import { IBook, IFlashcard, IRawFlashcard } from "./interfaces";
 
 const booksUrl = "https://edwardtanguay.vercel.app/share/techBooks.json";
 
@@ -9,17 +9,13 @@ const flashcardsUrl = "http://localhost:5556/flashcards";
 
 const mockApiWaitSeconds = 3;
 
-interface IsOpen {
-  flashcards: IFlashcard[];
-  isOpen: boolean;
-}
 interface IStore {
   appTitle: string;
   books: IBook[];
   flashcards: IFlashcard[];
   loadBooks: () => void;
   loadFlashcards: () => void;
-  handleToggleFlashcard: (flashcard: IsOpen) => void;
+  handleToggleFlashcard: (flashcard: IFlashcard) => void;
 }
 export const useStore = create<IStore>(
   (set): IStore => ({
@@ -44,7 +40,7 @@ export const useStore = create<IStore>(
       const rawFlashcards = (await axios.get(flashcardsUrl)).data;
 
       const _flashcards: IFlashcard[] = [];
-      rawFlashcards.forEach((rawFlashcard: IFlashcard) => {
+      rawFlashcards.forEach((rawFlashcard: IRawFlashcard) => {
         const flashcard = {
           ...rawFlashcard,
           isOpen: false,
@@ -75,7 +71,6 @@ export const LoadStore = () => {
     setTimeout(() => {
       store.loadBooks();
       store.loadFlashcards();
-      store.handleToggleFlashcard(flashcard);
     }, mockApiWaitSeconds * 1000);
   }, []);
   return <></>;
