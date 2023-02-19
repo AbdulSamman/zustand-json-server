@@ -5,7 +5,7 @@ import { IBook, IFlashcard, IRawFlashcard } from "./interfaces";
 
 const booksUrl = "https://edwardtanguay.vercel.app/share/techBooks.json";
 
-const flashcardsUrl = "http://localhost:5556/flashcards";
+const flashcardsUrl = "https://edwardtanguay.vercel.app/share/flashcards.json";
 
 const mockApiWaitSeconds = 3;
 

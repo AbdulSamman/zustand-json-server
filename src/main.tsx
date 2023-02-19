@@ -5,9 +5,7 @@ import { LoadStore } from "./store";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <BrowserRouter>
-    <>
-      <LoadStore />
-      <App />
-    </>
+    <LoadStore />
+    <App />
   </BrowserRouter>
 );
