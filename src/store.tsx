@@ -2,7 +2,6 @@ import create from "zustand";
 import { useEffect } from "react";
 import axios from "axios";
 import { IBook, IFlashcard, IRawFlashcard } from "./interfaces";
-import fs from "fs";
 
 const booksUrl = "https://edwardtanguay.vercel.app/share/techBooks.json";
 
